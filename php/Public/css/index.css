@@ -1,0 +1,126 @@
+body{
+	font-size: 14px;
+	font-family: arial, 'Microsoft Yahei', 'Hiragino Sans GB', sans-serif;
+	background-color: #fff;
+}
+.container{
+	width: 90%;
+	margin: 2em auto;
+}
+.logo{
+	height: 80px;
+	float: left;
+	font-size: 60px;
+	font-weight: bold;
+	color: #32A5E7;
+}
+.search{
+	float: right;
+	margin-top: 40px;
+	vertical-align: bottom;
+}
+.search-input{
+	width: 617px;
+  	height: 20px;
+  	border: 1px solid #d7d7d7;
+  	padding: 9px 0 9px 14px;
+  	color: #b7b7b7;
+}
+.btn-search{
+	margin-left: 18px;
+  	width: 112px;
+  	height: 40px;
+  	font-size: 18px;
+  	color: #fff;
+  	background-color: #32a5e7;
+  	border: none;
+  	vertical-align: top;
+}
+.selectList{
+	width: 960px;
+	margin-right: auto;
+	margin-left: auto;
+}	
+.selectList p{
+	padding-top: 12px;
+	padding-left: 10px;
+	padding-bottom: 12px;
+	border-top: 1px solid #dfdfdf;
+}
+.selectList p:last-child{
+	border-bottom: 1px solid #dfdfdf;
+}
+.selectList span{
+	color: #8c8c8c;
+	font-size: 14px;
+}
+.selectList p a{
+	text-decoration: none;
+	padding: 3px 8px;
+	color: #515151;
+	font-size: 0.9em;
+}
+.selectList p a:hover{
+	color: #32A5E7;
+}
+.titleList{
+
+}
+.jobTitle{
+	border-bottom: 1px solid #e6e6e6;	
+	padding: 3px;
+	line-height: 200%;
+
+}
+.title{
+	float: left;
+}
+.time{
+	float: right;
+	display: inline;
+	color: #9da5ab;
+}
+.title a{
+	text-decoration: none;
+	color: #3B8AC9;
+}
+.foot p{
+	text-align: right;
+	color: gray;
+	font-size: 15px;
+	line-height: 150%;
+  	padding: 0.3em;
+}
+.choose{
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#choose a{
+	font-size: 12px;
+	padding: 3px;
+	margin: 5px;
+	text-decoration: none;
+	border: 1px solid #e8e8e8;
+	color: #666;
+}
+#choose a:hover{
+	color: #f40;
+	content: "关闭";
+}
+.list a{
+	padding: 5px;
+	text-decoration: none;
+	font-size: 18px;
+	color: #32A5E7;
+	font-weight: bold;
+}
+
+.current{
+	color: #FF4A00;
+	padding: 5px;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: bold;
+
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>详细信息</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/base.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/detail.css">
+</head>
+<body>
+	<div class="container">
+		<div class="table mt30">
+			 <h1>{$data.title}</h1>
+			  <table id="keywords" cellspacing="0" cellpadding="0">
+		      <thead>
+		        <tr>
+		          <th><span>学校</span></th>
+		          <th><span>招聘单位名称</span></th>
+		          <th><span>学历要求</span></th>
+		          <th><span>招聘性质</span></th>
+		        </tr>
+		      </thead>
+		      <tbody>
+		        <tr>
+		          <td class="lalign">{$data.school}</td>
+		          <td>{$data.name}</td>
+		          <td>{$data.education}</td>
+		          <td>{$data.property}</td>
+		      </tr>
+		      </tbody>
+		      <thead>
+		        <tr>
+		        	<th><span>招聘人数</span></th>
+		            <th><span>招聘时间</span></th>
+		             <th><span>招聘地点</span></th>
+		              <th><span>原始链接</span></th>
+		        </tr>
+		    </thead>
+		   	<tbody>
+		        <tr>
+		          <td class="lalign">{$data.num}</td>
+		          <td>{$data.time}</td>
+		          <td>{$data.interview}</td>
+		          <td><a href="{$data.url}" target="_blank">点击这里</a></td>
+		      </tr>
+		      </tbody>
+		    
+		    </table>
+		</div>
+		<textarea disabled="disabled">
+			{$data.requires}
+		</textarea>
+	</div>
+</body>
+</html>

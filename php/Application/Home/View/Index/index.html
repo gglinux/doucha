@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>逗叉网-校招信息综合平台</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/base.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index.css">
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+<div class="container">
+	<header class="clearfix mt20">
+		<div class="logo"><a href="/index.php" style="text-decoration:none;color:#32A5E7;"><span>逗叉网</span></a></div>
+		<div class="search">
+			<input type="text" placeholder="请输入关键字" class="search-input"><button class="btn-search">搜索</button>
+		</div>
+	</header>
+	<p class="choose mt50" id="choose"></p>
+	<div class="selectList mt10">
+		<p><span>学校：</span>
+			<a href="javascript:;" qvalue="zhongnan" type="school">中南大学</a>
+			<a href="javascript:;" qvalue="huda" type="school">湖南大学</a>
+			<a href="javascript:;" qvalue="hushi" type="school">湖南师范大学</a>
+			<a href="javascript:;" qvalue="xiangda" type="school">湘潭大学</a>
+			<a href="javascript:;" qvalue="keda" type="school">湖南科技大学</a></p>
+		<p><span>性质：</span>
+			<a href="javascript:;" qvalue="shixi" type="property">实习</a>
+			<a href="javascript:;" qvalue="all" type="property">全职</a></p>
+		<p><span>时间：</span>
+			<a href="javascript:;" qvalue="two" type="time">近两天</a>
+			<a href="javascript:;" qvalue="five" type="time">近五天</a>
+			<a href="javascript:;" qvalue="seven" type="time">近一周</a>
+			<a href="javascript:;" qvalue="other" type="time">其他</a></p>
+		<p><span>地点：</span>
+			<a href="javascript:;" qvalue="xiangtan" type="position">湘潭</a>
+			<a href="javascript:;" qvalue="changsha" type="position">长沙</a></p>
+		<p><span>学历：</span>
+			<a href="javascript:;" qvalue="benke" type="education">本科</a>
+			<a href="javascript:;" qvalue="shuoshi" type="education">硕士</a></p>
+	</div>
+	<div class="titleList mt30">
+		<ul>
+			<foreach name="data" item="vo">
+				<li class="jobTitle clearfix">
+					<div class="title"><a href="{:U('Index/detail?id='.$vo[id])}">{$vo.title}</a></div>
+					<div class="time">{$vo.time}</div>
+				</li>
+			</foreach>
+		</ul>
+	</div>
+	<div class="mt20 list" style="text-align:center;">
+		{$page}
+	</div>
+	<footer class="foot mt50">
+		<p>联系&nbsp;|&nbsp;gglinux1@gmail.com</p>
+	</footer>
+
+</div>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	var href = location.href;
+	var search = location.search;
+	
+	//alert(search);
+	if(search.indexOf("??")!=-1){
+		location.search = search.substring(1,search.length);
+		search = location.search;
+	}
+	if (search != "") {
+		var type = search.split("&");
+		for(var i = 0; i < type.length; i++){
+			var value = type[i].split("=");
+			// alert(value[1]);
+			switch(value[1]){
+				case "zhongnan":$("#choose").append("<a href='javascript:;' qvalue='"+value[1]+"'>中南大学&nbsp;×</a>");break;
+				case "huda":$("#choose").append("<a href='javascript:;' qvalue='"+value[1]+"'>湖南大学&nbsp;×</a>");break;
+				case "hushi":$("#choose").append("<a href='javascript:;' qvalue='"+value[1]+"'>湖南师范大学&nbsp;×</a>");break;
+				case "xiangda":$("#choose").append("<a href='javascript:;' qvalue='"+value[1]+"'>湘潭大学&nbsp;×</a>");break;
+				case "keda":$("#choose").append("<a href='javascript:;' qvalue='"+value[1]+"'>湖南科技大学&nbsp;×</a>");break;
+				case "shixi":$("#choose").append("<a href='javascript:;' qvalue='"+value[1]+"'>实习&nbsp;×</a>");break;
+				case "all":$("#choose").append("<a href='javascript:;' qvalue='"+value[1]+"'>全职&nbsp;×</a>");break;
+				case "two":$("#choose").append("<a href='javascript:;' qvalue='"+value[1]+"'>近两天&nbsp;×</a>");break;
+				case "five":$("#choose").append("<a href='javascript:;' qvalue='"+value[1]+"'>近五天&nbsp;×</a>");break;
+				case "seven":$("#choose").append("<a href='javascript:;' qvalue='"+value[1]+"'>近一周&nbsp;×</a>");break;
+				case "other":$("#choose").append("<a href='javascript:;' qvalue='"+value[1]+"'>其他时间&nbsp;×</a>");break;
+				case "xiangtan":$("#choose").append("<a href='javascript:;' qvalue='"+value[1]+"'>湘潭&nbsp;×</a>");break;
+				case "changsha":$("#choose").append("<a href='javascript:;' qvalue='"+value[1]+"'>长沙&nbsp;×</a>");break;
+				case "benke":$("#choose").append("<a href='javascript:;' qvalue='"+value[1]+"'>本科&nbsp;×</a>");break;
+				case "shuoshi":$("#choose").append("<a href='javascript:;' qvalue='"+value[1]+"'>硕士&nbsp;×</a>");break;
+			}
+		}
+		$(".choose a").on("click",function(){
+			var value = $(this).attr("qvalue");
+			var search = location.search;
+			var array = search.split("&");
+			for(var i = 0; i < array.length; i++){
+				if (array[i].indexOf(value)!=-1) {
+					var start = search.substring(0,search.indexOf(array[i])-1);
+					var end = search.substring(search.indexOf(array[i])+array[i].length,search.length);
+					if (start[0]=="?") {
+
+						location.href = start + end;
+					}else{
+						location.href ="?" + start.substring(1,start.length)+ end;
+					}
+					break;
+				}
+			}
+		});
+	}
+
+	$(".selectList p a").on("click",function(){
+		if (search!="") {
+			if (href.indexOf(this.type)==-1) {
+				location.href = href + "&"+ this.type + "=" + $(this).attr("qvalue");
+			}
+			else{
+				var regex =new RegExp(this.type+"=\\w+","g");
+				var value = this.type + "=" + $(this).attr("qvalue");
+				location.href  = href.replace(regex,value);
+				
+			}
+		} else{
+			location.href = href + "?" + this.type + "=" + $(this).attr("qvalue");
+		}
+	});
+});	
+</script>
+</body>
+</html>
