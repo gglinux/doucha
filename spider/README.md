@@ -1,7 +1,7 @@
-## spider
+##Spider
 Based on webmagic,grab the page of employment Information Web.
 
-##installation
+##Installation
 1. install maven,run the pom.xml
 
 ##Sugestion
