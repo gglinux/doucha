@@ -9,3 +9,7 @@ Campus recruitment website,data from employment information of five site.
 
 ##Sugestion
 *   if somebody has energy and resources,you are recommended to run the project.I think it is useful for students,which is facing finding job.
+
+## Show
+![page.png](https://github.com/gglinux/doucha/blob/master/static/resource/page.png)
+
