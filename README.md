@@ -1,4 +1,4 @@
-#Doucha
+# Doucha
 Campus recruitment website,data from employment information of five site.
 
 ## Installation
@@ -7,7 +7,7 @@ Campus recruitment website,data from employment information of five site.
 3. run the [website](https://github.com/gglinux/doucha/blob/master/php/README.md) which was built of php.
 4. [access the site](http://www.gglinux.com),enjoy it. 
 
-##Sugestion
+## Sugestion
 *   if somebody has energy and resources,you are recommended to run the project.I think it is useful for students,which is facing finding job.
 
 ## Show
