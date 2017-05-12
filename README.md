@@ -6,8 +6,12 @@
 
 ## Installation
 1. 导入数据.
-2. 运行爬虫程序[爬虫文档](https://github.com/gglinux/doucha/blob/master/spider/README.md) 
-3. 部署网站 [网站文档](https://github.com/gglinux/doucha/blob/master/php/README.md)
+2. 运行爬虫程序
+3. 部署网站
+
+## Doc
+1. [爬虫文档](https://github.com/gglinux/doucha/blob/master/spider/README.md) 
+2. [网站文档](https://github.com/gglinux/doucha/blob/master/php/README.md)
 
 ## Show
 ![page.png](https://github.com/gglinux/doucha/blob/master/static/resource/page.png)
